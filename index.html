@@ -1,57 +1,219 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Aditi ❤️</title>
+
 <style>
-body{margin:0;font-family:Arial;background:linear-gradient(135deg,#ffd1dc,#fff0f5,#fff7cc);overflow-x:hidden;text-align:center}
-.hero{padding:20px}
-h1{color:#ff2d75;font-size:3em}
-p{font-size:1.2em;color:#555}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;padding:20px}
-img{width:100%;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,.2)}
-.card{margin:20px auto;max-width:800px;background:white;padding:20px;border-radius:20px}
-button{padding:12px 25px;border:none;border-radius:30px;background:#ff4081;color:#fff;font-size:18px}
-.heart{position:fixed;font-size:24px;animation:f 6s linear infinite}
-@keyframes f{from{transform:translateY(100vh)}to{transform:translateY(-20vh);opacity:0}}
-footer{padding:20px}
-</style></head>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffd6e7,#ffeef5,#fff5d9);
+overflow-x:hidden;
+text-align:center;
+}
+
+.container{
+padding:30px;
+}
+
+h1{
+font-size:3em;
+color:#ff4081;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+50%{transform:translateY(-10px);}
+}
+
+.subtitle{
+font-size:1.3em;
+color:#555;
+margin:15px;
+}
+
+.cake{
+font-size:80px;
+animation:spin 8s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+.gallery{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin:30px 0;
+}
+
+.gallery img{
+width:220px;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+border:5px solid white;
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+}
+
+.message{
+max-width:700px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+font-size:1.2em;
+line-height:1.8;
+color:#444;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#ff4081;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#e91e63;
+}
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+overflow:hidden;
+}
+
+.heart{
+position:absolute;
+font-size:25px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+}
+
+footer{
+margin:30px;
+font-size:18px;
+color:#666;
+}
+</style>
+</head>
+
 <body>
-<div class="hero">
-<h1>🎂 Happy Birthday Aditi 🎂</h1>
-<p>May your smile always shine brighter than the stars. 💖</p>
-<h2>From Someone Who Cherishes Every Moment With You 🌸</h2>
-<button onclick="document.getElementById('song').play()">🎵 Play Our Song</button>
-<audio id="song">
-<source src="Mitwa Kabhi Alvida Naa Kehna 320 Kbps.mp3" type="audio/mpeg">
-</audio>
-</div>
-<div class="gallery">
-<img src="IMG_20250521_193635.jpg">
-<img src="Screenshot_20250210_091941.jpg">
-<img src="IMG_20250511_204625.jpg">
-</div>
-<div class="card">
-<h2>💌 A Special Message</h2>
-<p>Dear Aditi,<br><br>
-On your special day, I wish you endless happiness, beautiful memories,
-and countless reasons to smile. Thank you for the wonderful moments,
-the laughter, and the memories we share. May this year bring you
-everything your heart desires.<br><br>
-✨ Keep smiling.<br>
-🌸 Keep shining.<br>
-💖 Stay the wonderful person you are.<br><br>
-Happy Birthday! 🎉
+
+<div class="hearts"></div>
+
+<div class="container">
+
+<div class="cake">🎂</div>
+
+<h1>Happy Birthday Aditi! 🎉</h1>
+
+<p class="subtitle">
+May your day be filled with love, laughter, happiness, and endless smiles! 💖✨
 </p>
+
+<div class="gallery">
+
+<!-- Replace these with Aditi's photos -->
+
+<img src="Screenshot_20250210_091941.jpg">
+<img src="IMG_20250521_193635.jpg">
+<img src="IMG_20250511_204625.jpg">
+
 </div>
-<canvas id="c"></canvas>
-<footer>Made with ❤️ especially for Aditi</footer>
+
+<div class="message">
+
+💌 Dear Aditi,
+
+<br><br>
+
+Wishing you the happiest birthday ever! 🌸
+
+May every moment of your life be as beautiful and bright as your smile.
+May your dreams come true, your heart stay happy, and your year be filled with unforgettable memories.
+
+✨ Stay amazing.
+🌷 Keep smiling.
+💖 Keep shining.
+
+Have the most wonderful birthday!
+
+</div>
+
+<button onclick="playMusic()">
+🎵 Birthday Song
+</button>
+
+<audio id="song">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<footer>
+Made with ❤️ especially for Aditi
+</footer>
+
+</div>
+
 <script>
-setInterval(()=>{
-let h=document.createElement('div');
-h.className='heart';
-h.innerHTML=['💖','💕','🌸','✨'][Math.floor(Math.random()*4)];
-h.style.left=Math.random()*100+'%';
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),6000);
-},300);
+
+function playMusic(){
+document.getElementById("song").play();
+}
+
+const hearts=document.querySelector(".hearts");
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML=["💖","💕","💗","💝","🌸","✨"][Math.floor(Math.random()*6)];
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDuration=(3+Math.random()*4)+"s";
+heart.style.fontSize=(20+Math.random()*20)+"px";
+hearts.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+}
+
+setInterval(createHeart,300);
+
 </script>
-</body></html>
+
+</body>
+</html>
