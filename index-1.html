@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Aditi ❤️</title>
+<style>
+body{margin:0;font-family:Arial;background:linear-gradient(135deg,#ffd1dc,#fff0f5,#fff7cc);overflow-x:hidden;text-align:center}
+.hero{padding:20px}
+h1{color:#ff2d75;font-size:3em}
+p{font-size:1.2em;color:#555}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;padding:20px}
+img{width:100%;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.card{margin:20px auto;max-width:800px;background:white;padding:20px;border-radius:20px}
+button{padding:12px 25px;border:none;border-radius:30px;background:#ff4081;color:#fff;font-size:18px}
+.heart{position:fixed;font-size:24px;animation:f 6s linear infinite}
+@keyframes f{from{transform:translateY(100vh)}to{transform:translateY(-20vh);opacity:0}}
+footer{padding:20px}
+</style></head>
+<body>
+<div class="hero">
+<h1>🎂 Happy Birthday Aditi 🎂</h1>
+<p>May your smile always shine brighter than the stars. 💖</p>
+<h2>From Someone Who Cherishes Every Moment With You 🌸</h2>
+<button onclick="document.getElementById('song').play()">🎵 Play Our Song</button>
+<audio id="song">
+<source src="Mitwa Kabhi Alvida Naa Kehna 320 Kbps.mp3" type="audio/mpeg">
+</audio>
+</div>
+<div class="gallery">
+<img src="50711.jpg">
+<img src="50710.jpg">
+<img src="50709.jpg">
+</div>
+<div class="card">
+<h2>💌 A Special Message</h2>
+<p>Dear Aditi,<br><br>
+On your special day, I wish you endless happiness, beautiful memories,
+and countless reasons to smile. Thank you for the wonderful moments,
+the laughter, and the memories we share. May this year bring you
+everything your heart desires.<br><br>
+✨ Keep smiling.<br>
+🌸 Keep shining.<br>
+💖 Stay the wonderful person you are.<br><br>
+Happy Birthday! 🎉
+</p>
+</div>
+<canvas id="c"></canvas>
+<footer>Made with ❤️ especially for Aditi</footer>
+<script>
+setInterval(()=>{
+let h=document.createElement('div');
+h.className='heart';
+h.innerHTML=['💖','💕','🌸','✨'][Math.floor(Math.random()*4)];
+h.style.left=Math.random()*100+'%';
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},300);
+</script>
+</body></html>
